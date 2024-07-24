@@ -10,7 +10,7 @@ exports.handler = async function(event, context) {
     const html = response.data;
     const $ = cheerio.load(html);
 
-    const titles = $('div.BjJfJf.PUpOsf').map((i, el) => $(el).text().trim()).get();
+    const titles = $('div.BjJfJf PUpOsf').map((i, el) => $(el).text().trim()).get();
     const jobElements = $('a.sMzDkb').map((i, el) => $(el).attr('href') || '').get();
     const descriptions = $('.HBvzbc').map((i, el) => $(el).text().trim()).get();
     const locations = $('div.tJ9zfc').map((i, el) => $(el).text().trim()).get();
